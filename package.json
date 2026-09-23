@@ -1,11 +1,21 @@
 {
   "name": "my2ndproject",
   "version": "1.0.0",
-  "description": "",
+  "description": "My second project",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adigson/bt_practice_2.git"
   },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.2",
+    "express": "^5.2.1"
+  }
 }
