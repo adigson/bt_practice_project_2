@@ -3,19 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
+    <title>Welcome</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <div class="container">
-      <img src="/profile.png" alt="My Picture" class="profile-pic" />
-      <h1>About Me</h1>
-      <p>
-        Hello! I'm learning Express.js and this page is served with static files.
-      </p>
+    <main class="container auth-container">
+      <h1 id="form-title">Welcome back</h1>
+      <p id="form-description">Log in to your account.</p>
 
-      <input type="text" id="nameInput" placeholder="Enter your name" />
-      <p id="greeting"></p>
-    </div>
+      <div class="auth-switch" role="group" aria-label="Choose an account action">
+        <button class="auth-switch-button active" type="button" data-mode="login" aria-pressed="true">
+          Log in
+        </button>
+        <button class="auth-switch-button" type="button" data-mode="register" aria-pressed="false">
+          Register
+        </button>
+      </div>
+
+      <form id="auth-form">
+        <div class="form-field hidden" id="name-field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+        </div>
+        <div class="form-field hidden" id="confirm-password-field">
+          <label for="confirm-password">Confirm password</label>
+          <input
+            id="confirm-password"
+            name="confirm-password"
+            type="password"
+            autocomplete="new-password"
+          />
+        </div>
+        <button class="submit-button" id="submit-button" type="submit">Log in</button>
+      </form>
+
+      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+    </main>
+    <script src="/auth.js" defer></script>
   </body>
 </html>

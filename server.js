@@ -9,13 +9,13 @@ const PORT = process.env.PORT || 3000;
 // Serve static assets from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve the main page for the homepage and about page
+// Serve the login page at the homepage
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.join(__dirname, 'views', 'about.html'));
 });
 
 app.listen(PORT, () => {

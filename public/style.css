@@ -23,6 +23,16 @@ body {
   text-align: center;
 }
 
+.auth-container {
+  width: min(90%, 440px);
+  text-align: left;
+}
+
+.auth-container h1,
+.auth-container > p {
+  text-align: center;
+}
+
 .profile-pic {
   width: 140px;
   height: 140px;
@@ -56,9 +66,77 @@ input {
   font-size: 1rem;
 }
 
+.auth-container input {
+  max-width: none;
+  margin-top: 0;
+}
+
 input:focus {
   outline: 2px solid #38bdf8;
   border-color: transparent;
+}
+
+.auth-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  padding: 0.35rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.auth-switch-button,
+.submit-button {
+  border: 0;
+  border-radius: 9px;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-switch-button {
+  flex: 1;
+  color: #cbd5e1;
+  background: transparent;
+}
+
+.auth-switch-button.active,
+.submit-button {
+  color: #0f172a;
+  background: #38bdf8;
+}
+
+.auth-switch-button:focus-visible,
+.submit-button:focus-visible {
+  outline: 2px solid #f8fafc;
+  outline-offset: 2px;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.form-message {
+  min-height: 1.5rem;
+  margin-top: 1rem;
+  color: #fbbf24;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }
 
 #greeting {
