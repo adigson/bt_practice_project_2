@@ -11,47 +11,78 @@
       <h1 id="form-title">Welcome back</h1>
       <p id="form-description">Log in to your account.</p>
 
-      <div class="auth-switch" role="group" aria-label="Choose an account action">
-        <button class="auth-switch-button active" type="button" data-mode="login" aria-pressed="true">
-          Log in
-        </button>
-        <button class="auth-switch-button" type="button" data-mode="register" aria-pressed="false">
-          Register
-        </button>
-      </div>
+      <section id="auth-panel">
+        <div class="auth-switch" role="group" aria-label="Choose an account action">
+          <button class="auth-switch-button active" type="button" data-mode="login" aria-pressed="true">
+            Log in
+          </button>
+          <button class="auth-switch-button" type="button" data-mode="register" aria-pressed="false">
+            Register
+          </button>
+        </div>
 
-      <form id="auth-form">
-        <div class="form-field hidden" id="name-field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" />
-        </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            autocomplete="current-password"
-            required
-          />
-        </div>
-        <div class="form-field hidden" id="confirm-password-field">
-          <label for="confirm-password">Confirm password</label>
-          <input
-            id="confirm-password"
-            name="confirm-password"
-            type="password"
-            autocomplete="new-password"
-          />
-        </div>
-        <button class="submit-button" id="submit-button" type="submit">Log in</button>
-      </form>
+        <form id="auth-form">
+          <div class="form-field hidden" id="name-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" />
+          </div>
+          <div class="form-field hidden" id="username-field">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              minlength="3"
+              maxlength="30"
+              pattern="[a-zA-Z0-9_-]+"
+            />
+          </div>
+          <div class="form-field hidden" id="email-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" />
+          </div>
+          <div class="form-field" id="identifier-field">
+            <label for="identifier">Username or email</label>
+            <input id="identifier" name="identifier" type="text" autocomplete="username" required />
+          </div>
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              minlength="12"
+              required
+            />
+          </div>
+          <div class="form-field hidden" id="confirm-password-field">
+            <label for="confirm-password">Confirm password</label>
+            <input
+              id="confirm-password"
+              name="confirm-password"
+              type="password"
+              autocomplete="new-password"
+            />
+          </div>
+          <button class="submit-button" id="submit-button" type="submit">Log in</button>
+        </form>
 
-      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <p class="demo-note hidden" id="demo-note">
+        Demo account (development only):
+        <strong id="demo-username"></strong> /
+        <strong id="demo-password"></strong>
+      </p>
+
+      <section class="hidden" id="account-panel" aria-live="polite">
+        <h2 id="account-heading"></h2>
+        <p id="account-details"></p>
+        <button class="submit-button" id="logout-button" type="button">Log out</button>
+      </section>
     </main>
     <script src="/auth.js" defer></script>
   </body>
